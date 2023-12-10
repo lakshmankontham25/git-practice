@@ -1,0 +1,17 @@
+---
+- name: Install nginix
+  hosts: all
+  tasks:
+  - name: Install nginix
+    apt:
+      name: ngnix
+      state: latest
+      update_cache: yes
+  - name: Ensure ngnix is running
+    systemd:
+      name: nginix
+      state: started
+      enabled: yes
+
+
+     
